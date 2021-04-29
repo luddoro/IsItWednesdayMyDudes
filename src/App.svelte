@@ -26,6 +26,8 @@
 
 
 <style>
+	
+
 	.container {
 		
 		display: flex;
@@ -33,7 +35,7 @@
 		align-items: center;
 		height: 100vh;
 		width: 100vw;
-		margin: 0;
+		padding:0px;
 		background-color: #dadada;
 	}
 	h1 {
