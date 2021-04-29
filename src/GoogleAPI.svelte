@@ -1,8 +1,9 @@
 <script>
+    import { GAPIKEY } from '.env';
     function start() {
       // 2. Initialize the JavaScript client library.
       gapi.client.init({
-        'apiKey': 'AIzaSyAUrROeSqcJSfalzg-BVNC5vvf2ZsEagHw',
+        'apiKey': {GAPIKEY},
       }).then(function() {
         // 3. Initialize and make the API request.
         return gapi.client.request({
