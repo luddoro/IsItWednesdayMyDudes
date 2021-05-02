@@ -12,7 +12,7 @@
 
 <div class="flex-wrapper">
 	<div class="content">
-		{#if currentDate.getDay() === 0}
+		{#if currentDate.getDay() === 3}
 			<img class="frog" src="/wednesdayfrog.png" alt="Wednesdayfroge">
 		{:else}
 			<h1> Its not my Wednesday my dudes :( </h1>
