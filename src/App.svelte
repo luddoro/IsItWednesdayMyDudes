@@ -34,8 +34,8 @@
 
 	background-color: #dadada;
 	color: #333333;
-	font-size: 3em;
-	font-weight: 150;
+	font-size: 2.5vw;
+	font-weight: 10;
 	overflow: hidden;
 }
 .content {
