@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+import YoutubeAPI from './YoutubeAPI.svelte';
 	
  	let currentDate = new Date();
 
@@ -15,9 +15,12 @@
 		{#if currentDate.getDay() === 3}
 			<img class="frog" src="/wednesdayfrog.png" alt="Wednesdayfroge">
 		{:else}
-			<h1> Its not my Wednesday my dudes :( </h1>
+			<h1> Its not Wednesday my dudes :( </h1>
 		{/if}	 
 	</div> 
+	<div class="youtubePlayer">
+		<YoutubeAPI></YoutubeAPI>
+	</div>
 </div>
 
 
