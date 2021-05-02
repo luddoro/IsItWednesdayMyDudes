@@ -3,10 +3,6 @@
 	
  	let currentDate = new Date();
 
-// 	onMount(async () => {
-// 		const res = await fetch(`https://i.kym-cdn.com/entries/icons/original/000/020/016/wednesdaymydudeswide.jpg`);
-// 	 	frog = await res.json();
-// })
 
 
  </script> 
@@ -14,10 +10,10 @@
 
 
 
-<div class="container">
+<div class="flex-wrapper">
 	<div class="content">
-		{#if currentDate.getDay() === 3}
-			<img src="/wednesdayfrog.png" alt="Wednesdayfroge">
+		{#if currentDate.getDay() === 0}
+			<img class="frog" src="/wednesdayfrog.png" alt="Wednesdayfroge">
 		{:else}
 			<h1> Its not my Wednesday my dudes :( </h1>
 		{/if}	 
@@ -26,38 +22,31 @@
 
 
 <style>
+
+.flex-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+
+	min-height: 100vh;
+	min-width: 100vw;
+
+	background-color: #dadada;
+	color: #333333;
+	font-size: 3em;
+	font-weight: 150;
+	overflow: hidden;
+}
+.content {
 	
+}
+.frog {
+	width: 100%;
+	height: auto;
+	max-width: 400px;
+}
 
-	.container {
-		
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		width: 100vw;
-		padding:0px;
-		background-color: #dadada;
-	}
-	h1 {
-		color: #201f1f;
-		text-transform: uppercase;
-		font-size: 5em;
-		font-weight: 150;
-	}
-	/* main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	
-
-
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	} */
 </style>
 
 
