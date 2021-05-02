@@ -1,15 +1,8 @@
-
-<svelte:head>
-    <script src="https://apis.google.com/js/api.js"></script>
-    
-</svelte:head>
 <script>
     
 function start() {
   console.log(GAPIKEY);
-  console.log("uwu");
-  // 1. Load the JavaScript client library.
-gapi.load('client', start);
+console.log("uwu");
   // 2. Initialize the JavaScript client library.
   gapi.client.init({
     'apiKey': GAPIKEY,
@@ -26,21 +19,6 @@ gapi.load('client', start);
   });
 };
 
+gapi.load('client', start);
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
