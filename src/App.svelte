@@ -1,4 +1,8 @@
+<svelte:head> 
+	<title>Isitwednesdaymydudes?</title>
+</svelte:head>
 <script>
+
 import YoutubeAPI from './YoutubeAPI.svelte';
 	
  	let currentDate = new Date();
@@ -40,9 +44,6 @@ import YoutubeAPI from './YoutubeAPI.svelte';
 	font-size: 2.5vw;
 	font-weight: 10;
 	overflow: hidden;
-}
-.content {
-	
 }
 .frog {
 	width: 100%;
