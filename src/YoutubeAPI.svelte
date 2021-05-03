@@ -4,6 +4,7 @@ function start() {
   loadClient().then( () => {
     execute()
   });
+}
  
   function getChannelId(username) {
     return gapi.client.youtube.channels.list({
@@ -28,7 +29,8 @@ function start() {
       "part": [
         "snippet"
       ],
-      "channelId": getChannelId("ZimoNitrome")
+      "id": ["PLy3-VH7qrUZ5IVq_lISnoccVIYZCMvi-8"]
+      //"channelId": getChannelId("ZimoNitrome")
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
@@ -36,7 +38,6 @@ function start() {
               },
               function(err) { console.error("Execute error", err); });
   }
-
 
 gapi.load('client', start);
 
