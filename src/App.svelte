@@ -7,7 +7,7 @@
 
 <div class="flex-wrapper">
 	<div class="content">
-		{#if currentDate.getDay() === 6}
+		{#if currentDate.getDay() === 3}
 			<div id="frog-img">
 				<img class="frog" src="/wednesdayfrog.png" alt="Wednesdayfroge">
 			</div>
