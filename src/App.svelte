@@ -2,12 +2,14 @@
 	<title>Isitwednesdaymydudes?</title>
 </svelte:head>
 <script>
+	import Timer from "./Timer.svelte"
  	let currentDate = new Date();
+
  </script> 
 
 <div class="flex-wrapper">
 	<div class="content">
-		{#if currentDate.getDay() === 6}
+		{#if currentDate.getDay() === 3}
 			<div id="frog-img">
 				<img class="frog" src="/wednesdayfrog.png" alt="Wednesdayfroge">
 			</div>
@@ -51,6 +53,7 @@
 			</script>
 		{:else}
 			<h1> Its not Wednesday my dudes :( </h1>
+			<Timer></Timer>
 		{/if}	 
 	</div> 
 
