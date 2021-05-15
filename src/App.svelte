@@ -2,7 +2,9 @@
 	<title>Isitwednesdaymydudes?</title>
 </svelte:head>
 <script>
+	import Timer from "./Timer.svelte"
  	let currentDate = new Date();
+
  </script> 
 
 <div class="flex-wrapper">
@@ -50,7 +52,8 @@
 			}
 			</script>
 		{:else}
-			<h1> Its not Wednesday my dudes :( </h1>
+			<h2> Its not Wednesday my dudes :( </h2>
+			<Timer></Timer>
 		{/if}	 
 	</div> 
 
