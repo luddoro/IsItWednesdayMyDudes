@@ -1,41 +1,18 @@
 <script lang="typescript">
     import { onMount } from 'svelte';
+    import nextWednesday from 'date-fns/nextWednesday'
 
-    
-    let today = new Date('2021-05-15T03:24:00');
-    let timeLeft;
-    const theDay = 3;
-    
-    if(!todayIsTheDayMyDudes(today)) {
-      var nextWedneday = new Date();
-      let diff = nextWedneday.getDate() + (theDay - nextWedneday.getDay())%7;
-      if (diff < 0){
-        nextWedneday.setDate(nextWedneday.getDate() + (theDay - nextWedneday.getDay())%7 + 7);
-      }else{
-        nextWedneday.setDate(nextWedneday.getDate() + (theDay - nextWedneday.getDay())%7);
-      }
-      nextWedneday.setHours(0,0,0,0);
-      console.log(nextWedneday)
+    let today = new Date().setHours(0,0,0,0);
+    let deadline = Date.parse(nextWednesday(today).toISOString());
 
-      timeLeft = getTimeRemainingOfCountdown(nextWedneday);
-      onMount( () => {
-        const interval = setInterval(() => {
-          timeLeft = getTimeRemainingOfCountdown(nextWedneday);
-        }, 1000);
-      });
-    }
-
-    function todayIsTheDayMyDudes(today){
-      return today.getDay() === theDay ? true : false;
-    }
-
-    function getTimeRemainingOfCountdown (endtime) {
-      let total = Date.parse(endtime) - new Date('2021-05-16T03:24:00');
+    function getTimeRemainingOfCountdown (deadline) {
+      let now = Date.parse(new Date().toISOString());
+      let total = deadline - now;
       let seconds = Math.floor( (total/1000) % 60 );
       let minutes = Math.floor( (total/1000/60) % 60 );
       let hours = Math.floor( (total/(1000*60*60)) % 24 );
-      let days = Math.floor( total/(1000*60*60*24) );
-
+      let days = Math.floor( total/(1000*60*60*24));
+      
       return {
         days,
         hours,
@@ -43,9 +20,25 @@
         seconds
       };
     }
+
+    function parseNumber(number){
+      if(number < 10){
+        return "0"+number;
+      }
+      return number;
+    }
+
+    let timeLeft = getTimeRemainingOfCountdown(deadline);
+
+     onMount( () => {
+        const interval = setInterval(() => {
+          timeLeft = getTimeRemainingOfCountdown(deadline);
+        }, 1000);
+      });
    </script>
+
    <div style="text-align: center"> 
-    {timeLeft.days} : {timeLeft.hours} : {timeLeft.minutes} : {timeLeft.seconds}
+    <h2 style="font-size: 1em"> Time Left: {timeLeft.days} : {parseNumber(timeLeft.hours)} : {parseNumber(timeLeft.minutes)} : {parseNumber(timeLeft.seconds)} </h2>
 
 
    </div>

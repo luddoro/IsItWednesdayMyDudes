@@ -52,7 +52,7 @@
 			}
 			</script>
 		{:else}
-			<h1> Its not Wednesday my dudes :( </h1>
+			<h2> Its not Wednesday my dudes :( </h2>
 			<Timer></Timer>
 		{/if}	 
 	</div> 
